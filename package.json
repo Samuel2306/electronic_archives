@@ -1,0 +1,28 @@
+{
+  "name": "gulp-project-template",
+  "version": "1.0.0",
+  "description": "gulp template",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Samuel2306/gulp-project-template.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Samuel2306/gulp-project-template/issues"
+  },
+  "homepage": "https://github.com/Samuel2306/gulp-project-template#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-imagemin": "^3.2.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^4.0.2",
+    "gulp-tinypng-nokey": "^1.1.0",
+    "gulp-uglify": "^2.1.2"
+  }
+}
