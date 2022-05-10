@@ -9,12 +9,14 @@ const distRoot = 'dist/';
 const devPath = {
   css : devRoot + 'scss/',
   js : devRoot + 'js/',
-  images : devRoot + 'images/'
+  images : devRoot + 'images/',
+  media : devRoot + 'media/'
 };
 const distPath = {
   css : distRoot + 'css/',
   js : distRoot + 'js/',
-  images : distRoot + 'images/'
+  images : distRoot + 'images/',
+  media : distRoot + 'media/'
 };
 
 gulp.task('sass', function () {
@@ -41,18 +43,26 @@ gulp.task('imagemin', function () {
     .pipe(gulp.dest(distPath.images));
 });
 
-// 文件拷贝
+// html文件拷贝
 gulp.task('html', function () {
   gulp.src(devRoot + '*.html')
     .pipe(gulp.dest(distRoot));
 });
 
+// 多媒体文件拷贝
+gulp.task('media', function () {
+  gulp.src(devPath.media + '*.{mp4,mpeg,mp3,ogg}')
+    .pipe(gulp.dest(distPath.media));
+});
+
+
 // 实时监听
-gulp.task('watch', ['sass', 'jsmin', 'imagemin', 'html'],function () {
+gulp.task('watch', ['sass', 'jsmin', 'imagemin', 'html', 'media'],function () {
   gulp.watch(devPath.css + '*.scss', ['sass']);
   gulp.watch(devPath.js + '*.js', ['jsmin']);
   gulp.watch(devPath.images + '*.{png,jpg,jpeg,gif,ico}', ['imagemin']);
   gulp.watch(devRoot + '*.html', ['html']);
+  gulp.watch(devPath.media + '*.{mp4,mpeg,mp3,ogg}', ['media']);
 });
 // gulp任务
 gulp.task('default', ['watch']);

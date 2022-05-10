@@ -1,5 +1,5 @@
 // 判断浏览器环境函数
-function isInMobile(){
+window.isInMobile = function (){
   if(window.navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i)) {
     return true; // 移动端
   }else{
